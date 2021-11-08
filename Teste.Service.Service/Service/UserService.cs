@@ -41,7 +41,7 @@ namespace Teste.Service.Service.Service
                 if(result.IsValid)
                 {
                     _repository.Insert(newUser);
-                    return ContractResult.ValidContractResult("Usuário adicionado com sucesso!");
+                    return ContractResult.ValidContractResult("Usuario adicionado com sucesso!");
                 }
                 else
                 {

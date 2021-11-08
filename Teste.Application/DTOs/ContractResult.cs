@@ -19,37 +19,48 @@ namespace Teste.Application.DTOs
 
         public bool Valid { get; set; }
         public string Message { get; set; }
-        public object Data { get; set; }
+        public  object Data { get; set; }
 
 
-        public ContractResult InvalidContractResult(string message)
+        public static ContractResult InvalidContractResult(string message)
         {
-            var contract = new ContractResult();
-            Message = message;
-            Valid = false;
+            var contract = new ContractResult { 
+                Message = message,
+                Valid = false
+            };
+            
             return contract;
         }
-        public ContractResult InvalidContractResult(string message, object data)
+        public static ContractResult InvalidContractResult(string message, object data)
         {
-            var contract = new ContractResult();
-            Message = message;
-            Data = data;
-            Valid = false;
+            var contract = new ContractResult
+            {
+                Message = message,
+                Valid = false,
+                Data = data
+            };
+
             return contract;
         }
-        public ContractResult ValidContractResult(string message, object data)
+        public static ContractResult ValidContractResult(string message, object data)
         {
-            var contract = new ContractResult();
-            Message = message;
-            Data = data;
-            Valid = true;
+            var contract = new ContractResult
+            {
+                Message = message,
+                Valid = false,
+                Data = data
+            };
+
             return contract;
         }
-        public ContractResult ValidContractResult(string message)
+        public static ContractResult ValidContractResult(string message)
         {
-            var contract = new ContractResult();
-            Message = message;
-            Valid = true;
+            var contract = new ContractResult
+            {
+                Message = message,
+                Valid = false
+            };
+
             return contract;
         }
     }
